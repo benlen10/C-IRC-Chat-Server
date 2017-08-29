@@ -3,7 +3,7 @@ const char * usage =
 "                                                               \n"
 "IRCServer:                                                   \n"
 "                                                               \n"
-"Simple server program used to communicate multiple users       \n"
+"A simple server program used to communicate multiple users       \n"
 "                                                               \n"
 "To use it in one window type:                                  \n"
 "                                                               \n"
@@ -120,13 +120,11 @@ main( int argc, char ** argv )
 	// Get the port from the arguments
 	int port = atoi( argv[1] );
 
+	// Create a new IRCServer instance
 	IRCServer ircServer;
 	
-	
-
 	// It will never return
 	ircServer.runServer(port);
-	
 }
 
 
@@ -143,12 +141,6 @@ IRCServer::processRequest( int fd )
 	unsigned char prevChar = 0;
 	unsigned char newChar = 0;
 	
-	//
-	// The client should send COMMAND-LINE\n
-	// Read the name of the client character by character until a
-	// \n is found.
-	//
-
 	// Read character by character until a \n is found or the command string is full.
 	while ( commandLineLength < MaxCommandLine &&
 		read( fd, &newChar, 1) > 0 ) {
