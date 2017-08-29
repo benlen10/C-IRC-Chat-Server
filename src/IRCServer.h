@@ -6,7 +6,6 @@
 using namespace std;
 
 class IRCServer {
-	// Add any variables you need
 
 private:
 	int open_server_socket(int port);

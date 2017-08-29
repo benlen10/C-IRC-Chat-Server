@@ -2,10 +2,8 @@
 #ifndef ROOM
 #define ROOM
 
-
+//Represents a single chat room for the IRC server
 class Room {
-	// Add any variables you need
-
 private:
 	
 
